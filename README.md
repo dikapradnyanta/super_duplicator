@@ -534,9 +534,6 @@ Found a bug? Have a feature request? Want to improve the code?
 
 ---
 
-
----
-
 ## 🎯 Tips & Best Practices
 
 ### Workflow Tips
