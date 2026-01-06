@@ -1,4 +1,4 @@
-# duplicate_comp_afterEfect# 🎬 Super Duplicator for After Effects
+# 🎬 Super Duplicator v2 for After Effects
 
 **Selective Nested Composition Duplicator with Full Control**
 
@@ -124,126 +124,168 @@ A powerful After Effects script that allows you to duplicate compositions with f
 
 ### Interface Overview
 
+#### Main Window Layout
+
+| Section | Element | Description |
+|---------|---------|-------------|
+| **Header** | 🎬 Super Duplicator v2 | Application title |
+| **Comp Info** | Main Comp: "Scene_01" | Currently selected composition |
+| **Tree View** | Nested compositions list | Hierarchical view of all nested comps |
+| **Selection Tools** | ✓ Select All / ✗ Deselect All | Quick selection buttons |
+| **Options Panel** | Folder, Auto-select, Suffix | Duplication settings |
+| **Action Buttons** | 🔍 Scan / 🚀 Duplicate | Main action controls |
+| **Status Bar** | Status: Ready | Current operation status |
+
+#### Tree View Example
+
 ```
-┌─────────────────────────────────────────┐
-│ 🎬 Super Duplicator v2                  │
-├─────────────────────────────────────────┤
-│ Main Comp: "Scene_01"                   │
-│                                         │
-│ Nested Comps (centang untuk unique):   │
-│ ☑ ├─ Background_Comp                   │
-│ ☑     ├─ BG_Layer_1                    │
-│ ☐     └─ Shared_Texture                │
-│ ☑ ├─ Text_Animations                   │
-│ ☑     └─ Title_Comp                    │
-│ ☐ ├─ Shared_Footer                     │
-│                                         │
-│ [✓ Select All]  [✗ Deselect All]       │
-│                                         │
-│ ☑ 📁 Buat folder baru                   │
-│    Nama folder: [Scene_01_Unique]      │
-│ ☑ 🎯 Auto-select hasil duplikat         │
-│ Suffix nama: [_Unique]                 │
-│                                         │
-│ [🔍 SCAN]  [🚀 DUPLIKAT SEKARANG]       │
-│                                         │
-│ Status: Siap                            │
-└─────────────────────────────────────────┘
+Nested Compositions (check to make unique):
+☑ ├─ Background_Comp          [Level 1] • 3 layers
+☑     ├─ BG_Layer_1          [Level 2] • 2 layers
+☐     └─ Shared_Texture      [Level 3] • 5 layers 🔗 (stays shared)
+☑ ├─ Text_Animations          [Level 1] • 1 layer
+☑     └─ Title_Comp          [Level 2] • 4 layers
+☐ ├─ Shared_Footer            [Level 1] • 8 layers 🔗 (stays shared)
 ```
+
+#### Options Configuration
+
+| Option | Type | Default | Description |
+|--------|------|---------|-------------|
+| **📁 Create folder** | Checkbox | ✓ Enabled | Organize duplicates in a new folder |
+| **Folder name** | Text input | `[CompName]_Unique` | Custom folder name |
+| **🎯 Auto-select** | Checkbox | ✓ Enabled | Select result after duplication |
+| **Suffix** | Text input | `_Unique` | Naming suffix for duplicated comps |
 
 ### Control Elements
 
-#### 1. Scan Button (🔍 SCAN NESTED COMPS)
-- **Function**: Analyzes selected composition and finds all nested comps
-- **Action**: Populates the tree view with all nested compositions
-- **When to use**: After selecting a main comp in Project Panel
+| Control | Icon | Function | Behavior |
+|---------|------|----------|----------|
+| **Scan Button** | 🔍 | Analyze composition | Finds all nested comps and populates tree view |
+| **Tree View List** | - | Display hierarchy | Shows nested comps with checkboxes for selection |
+| **Select All** | ✓ | Toggle all ON | Checks all nested comps (complete independence) |
+| **Deselect All** | ✗ | Toggle all OFF | Unchecks all (manual selection mode) |
+| **Create Folder** | 📁 | Folder option | Creates dedicated folder for duplicated comps |
+| **Folder Name** | - | Text input | Custom folder name (default: `CompName_Unique`) |
+| **Auto-select** | 🎯 | Selection option | Auto-select duplicated comp after creation |
+| **Suffix Input** | - | Text input | Custom suffix for comp names (default: `_Unique`) |
+| **Duplicate Button** | 🚀 | Execute | Runs duplication with confirmation dialog |
 
-#### 2. Tree View List
-- **Function**: Displays all nested compositions in hierarchical structure
-- **Checkboxes**: Check = unique this comp, Uncheck = keep shared
-- **Indentation**: Shows nesting levels (more indent = deeper nesting)
+#### Checkbox Behavior in Tree View
 
-#### 3. Select All / Deselect All
-- **Function**: Quickly toggle all checkboxes
-- **Use case**: 
-  - Select All: When you want complete independence
-  - Deselect All: When you want to manually select specific comps
-
-#### 4. Folder Options
-- **Create Folder Checkbox**: Enable/disable folder creation
-- **Folder Name Input**: Custom name for the folder (default: `[MainCompName]_Unique`)
-- **Behavior**: All duplicated comps will be moved into this folder
-
-#### 5. Auto-select Option
-- **Function**: Automatically select the main duplicated comp after operation
-- **Benefit**: Quick access to your new comp for immediate editing
-
-#### 6. Suffix Input
-- **Function**: Define custom suffix for duplicated comp names
-- **Default**: `_Unique`
-- **Examples**: `_Copy`, `_v2`, `_Client`, `_Draft`
-
-#### 7. Duplicate Button (🚀 DUPLIKAT SEKARANG)
-- **Function**: Executes the duplication with current settings
-- **Confirmation**: Shows summary dialog before proceeding
-- **Result**: Creates new composition structure based on selections
+| State | Symbol | Meaning | Result |
+|-------|--------|---------|--------|
+| **Checked** | ☑ | Make unique | This comp will be duplicated independently |
+| **Unchecked** | ☐ | Keep shared | This comp stays linked to original (shared reference) |
+| **Indented** | `├─` or `└─` | Nested level | Visual indicator of composition hierarchy |
 
 ---
 
 ## 💡 Use Cases
 
+### Use Case Comparison Table
+
+| Scenario | Shared Comps (☐) | Unique Comps (☑) | Benefits |
+|----------|------------------|-------------------|----------|
+| **Client Variations** | Common transitions, effects, templates | Client logos, text, colors | Smaller project size, consistent branding |
+| **Template System** | Universal animations, presets | Customizable elements | Reusable workflow, faster production |
+| **Version Control** | Base animations, backgrounds | Experimental variations | Safe testing, easy rollback |
+| **A/B Testing** | Shared assets, footage | Different approaches | Quick comparison, organized testing |
+| **Project Cleanup** | Intentionally shared elements | Independent sections | Prevents cross-contamination |
+
 ### 1. Client Variations
+
 **Scenario**: You need to create multiple versions of the same project for different clients.
 
-**Solution**:
-- Duplicate the main comp
-- Keep shared elements (logos, transitions) unchecked
-- Unique only client-specific content (text, colors)
-- Each version stays small and manageable
+**Strategy**:
 
-```
-Project A → shares: transitions, effects
-         → unique: client logo, text
+| Element | Status | Reason |
+|---------|--------|--------|
+| Transitions | ☐ Keep shared | Consistent animation style |
+| Effects | ☐ Keep shared | Same visual treatment |
+| Logo animations | ☑ Make unique | Client-specific branding |
+| Text overlays | ☑ Make unique | Different messaging |
+| Color grading | ☑ Make unique | Brand color requirements |
 
-Project B → shares: transitions, effects
-         → unique: client logo, text
-```
+**Result**: Each client version maintains shared animation quality while customizing branding elements.
 
 ### 2. Template System
+
 **Scenario**: Building reusable templates with some shared, some unique elements.
 
-**Solution**:
-- Create master template comp
-- Duplicate for each use case
-- Keep common animations shared (save space)
-- Unique only customizable parts
+**Workflow**:
+
+```
+Master Template
+├─ ☐ Universal_Transitions (shared across all projects)
+├─ ☐ Standard_Effects (consistent look)
+└─ ☑ Content_Placeholder (unique per project)
+```
+
+**Benefits**:
+- ✅ Smaller project files
+- ✅ Consistent quality
+- ✅ Faster turnaround
+- ✅ Easy updates to shared elements
 
 ### 3. Version Control
+
 **Scenario**: Testing different animation variations without affecting original.
 
-**Solution**:
-- Duplicate main comp
-- Uncheck all nested comps initially
-- Only unique the specific comp you want to experiment with
-- Original stays intact, easy to compare
+**Approach**:
+
+| Version | Background | Animation Style | Text Treatment |
+|---------|------------|-----------------|----------------|
+| Original | ☐ Shared | ☐ Original | ☐ Original |
+| Test A | ☐ Shared | ☑ Style_A_Unique | ☐ Original |
+| Test B | ☐ Shared | ☑ Style_B_Unique | ☐ Original |
+| Test C | ☐ Shared | ☑ Style_C_Unique | ☑ Text_C_Unique |
+
+**Advantage**: Isolated experimentation with easy comparison.
 
 ### 4. A/B Testing
+
 **Scenario**: Testing two different approaches for the same scene.
 
-**Solution**:
+**Configuration**:
 ```
-Version A: ☑ Animation_Style_1  ☐ Background (shared)
-Version B: ☑ Animation_Style_2  ☐ Background (shared)
+Version A:
+  ☑ Animation_Fast (unique - fast pacing)
+  ☐ Background_Sunset (shared)
+  ☐ Music_Track (shared)
+
+Version B:
+  ☑ Animation_Slow (unique - cinematic pacing)
+  ☐ Background_Sunset (shared)
+  ☐ Music_Track (shared)
 ```
+
+**Outcome**: Easy side-by-side comparison with minimal duplication.
 
 ### 5. Cleanup Heavy Projects
+
 **Scenario**: Project has too many shared comps, causing unintended changes.
 
-**Solution**:
-- Duplicate sections that need independence
-- Select All nested comps
-- Creates fully independent section
-- Prevents accidental cross-contamination
+**Before** (Problem):
+```
+Scene_01 ←→ Shared_Title ←→ Scene_02
+  ↓                           ↓
+Editing Scene_01        Breaks Scene_02! ❌
+```
+
+**After** (Solution):
+```
+Scene_01 → Title_Unique_01
+Scene_02 → Title_Unique_02
+  ↓                ↓
+Independent!   Independent! ✅
+```
+
+**Implementation**:
+1. Duplicate Scene_01
+2. ☑ Select all nested comps (full independence)
+3. Repeat for Scene_02
+4. Result: Zero cross-contamination
 
 ---
 
@@ -495,9 +537,7 @@ Found a bug? Have a feature request? Want to improve the code?
 
 ## 🙏 Credits
 
-**Developed by**: [Your Name]
-**Inspired by**: Community requests for better comp management
-**Special Thanks**: After Effects scripting community
+**Developed by**: I Komang Dika Pradnyanta
 
 ---
 
