@@ -1,4 +1,4 @@
-# 🎬 Super Duplicator v2 for After Effects
+# 🎬 Super Duplicator for After Effects
 
 **Selective Nested Composition Duplicator with Full Control**
 
@@ -23,30 +23,28 @@ A powerful After Effects script that allows you to duplicate compositions with f
 
 ## ✨ Features
 
-### 🎯 Core Features
+### Core Functionality
+- Selective nested composition duplication — choose exactly which comps to make unique  
+- Tree view with clear hierarchy display, regardless of depth  
+- Recursive scanning of nested compositions  
+- Safe handling of circular references to prevent infinite loops  
+- Automatic folder organization for duplicated results  
 
-- **Selective Duplication** - Choose exactly which nested compositions to make unique
-- **Tree View Display** - See all nested comps in a hierarchical structure, no matter how deep
-- **Smart Folder Management** - Automatically organize duplicated comps into a dedicated folder
-- **Recursive Scanning** - Detects nested compositions at any depth level
-- **Prevents Circular References** - Smart detection to avoid infinite loops
+### Workflow & Productivity
+- Select All / Deselect All for batch operations  
+- Custom suffix naming for duplicated compositions  
+- Smart name conflict resolution (e.g. `Comp_Unique_2`)  
+- Auto-select duplicated results  
+- Full undo support (Ctrl+Z)  
 
-### 🛠️ Advanced Features
+### User Experience
+- Real-time status and progress updates  
+- Confirmation dialog with action summary  
+- Modern, clean, and responsive UI  
+- Visual hierarchy with indentation and checkbox controls  
+- Improved error handling and stability  
+- Optimized memory usage for large projects  
 
-- **Custom Naming** - Define your own suffix for duplicated compositions
-- **Auto-Select Results** - Automatically select the newly created composition
-- **Batch Operations** - Select All / Deselect All for quick workflows
-- **Smart Name Handling** - Automatically prevents name conflicts (e.g., `Comp_Unique_2`)
-- **Undo Support** - Full undo group support (Ctrl+Z to revert)
-- **Real-time Status** - Progress and status updates during operations
-
-### 🎨 UI Features
-
-- Clean, modern interface
-- Visual hierarchy with indentation
-- Checkbox control for each nested comp
-- Configurable options panel
-- Responsive layout
 
 ---
 
@@ -54,13 +52,13 @@ A powerful After Effects script that allows you to duplicate compositions with f
 
 ### Method 1: ScriptUI Panels Folder (Recommended)
 
-1. Download `SuperDuplicator_v2.jsx`
+1. Download `Duplikat nested comp.jsx`
 2. Navigate to your After Effects ScriptUI Panels folder:
    - **Windows**: `C:\Program Files\Adobe\Adobe After Effects [version]\Support Files\Scripts\ScriptUI Panels\`
    - **Mac**: `/Applications/Adobe After Effects [version]/Scripts/ScriptUI Panels/`
 3. Copy the `.jsx` file into the ScriptUI Panels folder
 4. Restart After Effects
-5. Access from: `Window > Super Duplicator v2`
+5. Access from: `Window > Super Duplicator  `
 
 ### Method 2: Scripts Folder (Alternative)
 
@@ -70,7 +68,7 @@ A powerful After Effects script that allows you to duplicate compositions with f
    - **Mac**: `/Applications/Adobe After Effects [version]/Scripts/`
 3. Copy the `.jsx` file
 4. Restart After Effects
-5. Access from: `File > Scripts > Super Duplicator v2`
+5. Access from: `File > Scripts > Super Duplicator  `
 
 ### Method 3: Run Script File (Quick Test)
 
@@ -122,19 +120,34 @@ A powerful After Effects script that allows you to duplicate compositions with f
 
 ## 📖 Detailed Usage
 
-### Interface Overview
+### Interface Layout
 
-#### Main Window Layout
+**Header**
+- Super Duplicator
 
-| Section | Element | Description |
-|---------|---------|-------------|
-| **Header** | 🎬 Super Duplicator v2 | Application title |
-| **Comp Info** | Main Comp: "Scene_01" | Currently selected composition |
-| **Tree View** | Nested compositions list | Hierarchical view of all nested comps |
-| **Selection Tools** | ✓ Select All / ✗ Deselect All | Quick selection buttons |
-| **Options Panel** | Folder, Auto-select, Suffix | Duplication settings |
-| **Action Buttons** | 🔍 Scan / 🚀 Duplicate | Main action controls |
-| **Status Bar** | Status: Ready | Current operation status |
+**Active Composition**
+- Scene_01
+
+**Nested Compositions**
+- Background_Comp  
+  - BG_Layer_1  
+  - Shared_Texture  
+- Text_Animations  
+  - Title_Comp  
+- Shared_Footer
+
+**Options**
+- Create new folder
+- Auto-select duplicated results
+- Suffix: `_Unique`
+
+**Actions**
+- Scan
+- Duplicate
+
+**Status**
+- Ready
+
 
 #### Tree View Example
 
@@ -476,44 +489,6 @@ nestedComps = [
 
 ---
 
-## 📝 Changelog
-
-### v2.0.0 (Current)
-- ✨ NEW: Selective nested comp duplication
-- ✨ NEW: Tree view with hierarchy display
-- ✨ NEW: Automatic folder organization
-- ✨ NEW: Select All / Deselect All buttons
-- ✨ NEW: Custom suffix naming
-- ✨ NEW: Auto-select duplicated result
-- ✨ NEW: Smart name conflict resolution
-- ✨ NEW: Real-time status updates
-- ✨ NEW: Confirmation dialog with summary
-- 🐛 FIX: Circular reference handling
-- 🐛 FIX: Memory optimization for large projects
-- 💎 IMPROVED: Modern UI design
-- 💎 IMPROVED: Better error handling
-
-### v1.0.0 (Original)
-- Basic recursive duplication
-- Simple button interface
-- Duplicates all nested comps (no selection)
-
----
-
-## 📄 License
-
-**MIT License**
-
-Copyright (c) 2025
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----
-
 ## 🤝 Contributing
 
 Found a bug? Have a feature request? Want to improve the code?
@@ -537,8 +512,23 @@ Found a bug? Have a feature request? Want to improve the code?
 
 ## 🙏 Credits
 
-**Developed by**: 
-- # My Contributor
+**Developed by:**
+<table align="left">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/dikapradnyanta">
+        <img src="https://github.com/dikapradnyanta.png" width="120px;" alt="I Komang Dika Pradnyanta"/><br />
+        <sub><b>I Komang Dika Pradnyanta</b></sub>
+      </a>
+    </td>
+    <td>
+      <a href="https://github.com/dikapradnyanta">
+        <img height="130" src="https://github-readme-stats.vercel.app/api?username=dikapradnyanta&show_icons=true&theme=tokyonight&include_all_commits=true" />
+      </a>
+    </td>
+  </tr>
+</table>
+
 [![GitHub Profile](https://github-readme-stats.vercel.app/api?username=dikapradnyanta&show_icons=true&theme=tokyonight)](https://github.com/dikpradnyanta)
 
 ---
