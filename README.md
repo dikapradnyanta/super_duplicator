@@ -512,24 +512,28 @@ Found a bug? Have a feature request? Want to improve the code?
 
 ## 🙏 Credits
 
-**Developed by:**
-<table align="left">
+## 👤 Developed by
+
+<table>
   <tr>
-    <td align="center">
+    <td align="center" width="150">
       <a href="https://github.com/dikapradnyanta">
-        <img src="https://github.com/dikapradnyanta.png" width="120px;" alt="I Komang Dika Pradnyanta"/><br />
+        <img src="https://github.com/dikapradnyanta.png" width="120" alt="I Komang Dika Pradnyanta"/><br />
         <sub><b>I Komang Dika Pradnyanta</b></sub>
       </a>
     </td>
     <td>
       <a href="https://github.com/dikapradnyanta">
-        <img height="130" src="https://github-readme-stats.vercel.app/api?username=dikapradnyanta&show_icons=true&theme=tokyonight&include_all_commits=true" />
+        <img src="https://github-readme-stats.vercel.app/api?username=dikapradnyanta&show_icons=true&theme=tokyonight&include_all_commits=true" />
       </a>
     </td>
   </tr>
 </table>
 
-[![GitHub Profile](https://github-readme-stats.vercel.app/api?username=dikapradnyanta&show_icons=true&theme=tokyonight)](https://github.com/dikpradnyanta)
+<br clear="all" />
+
+---
+
 
 ---
 
