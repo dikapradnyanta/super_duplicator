@@ -537,7 +537,9 @@ Found a bug? Have a feature request? Want to improve the code?
 
 ## 🙏 Credits
 
-**Developed by**: I Komang Dika Pradnyanta
+**Developed by**: 
+- # My Contributor
+[![GitHub Profile](https://github-readme-stats.vercel.app/api?username=dikapradnyanta&show_icons=true&theme=tokyonight)](https://github.com/dikpradnyanta)
 
 ---
 
